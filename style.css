@@ -1,11 +1,6 @@
+body {margin: 0;}
 
-h1 {
-	color: Blue;
-	text-align: left;
-	text-size: 1000px;
-}
-
-ul {
+ul.nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -13,11 +8,11 @@ ul {
     background-color: #333;
 }
 
-li {
+ul.nav li {
     float: left;
 }
 
-li a, .dropbtn {
+ul.nav li a, ul.nav .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
@@ -25,15 +20,20 @@ li a, .dropbtn {
     text-decoration: none;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
+ul.nav li a.active{
+	background-color: #4CAF50;
+    color: white;
+}
+
+ul.nav li a:hover, ul.nav .dropdown:hover ul.nav .dropbtn {
     background-color: red;
 }
 
-li.dropdown {
+ul.nav li.dropdown {
     display: inline-block;
 }
 
-.dropdown-content {
+ul.nav .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -42,7 +42,7 @@ li.dropdown {
     z-index: 1;
 }
 
-.dropdown-content a {
+ul.nav .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -50,8 +50,17 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+ul.nav .dropdown-content a:hover {background-color: #f1f1f1}
 
-.dropdown:hover .dropdown-content {
+ul.nav .dropdown:hover .dropdown-content {
     display: block;
+}
+
+@media screen and (max-width: 600px){
+    ul.nav li.right, 
+    ul.nav li {float: none;}
+}
+
+ul.nav .contact{
+	float: right;
 }
